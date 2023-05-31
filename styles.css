@@ -1,0 +1,157 @@
+/* Estos codigos quitan las flechas*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*CSS GENERAL*/
+a {
+  color: #f3f3f3;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+a:hover{
+  color:rgb(75, 165, 243);
+}
+
+body {
+  font-family: "Roboto", sans-serif;  
+  margin: 0;
+  padding: 0; 
+    
+}
+
+header {
+  display: block;
+  background-color: blue;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(rgb(5, 40, 157), #2665a9);
+  color: #FFF;
+  width: 100%;
+  padding: 10px;
+    
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+/*CSS FORMULARIOS*/
+.form-container-doctores, .form-container-pacientes {
+  display: flex;
+  height: 90vh;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url(img/backgroundtest.png);  
+  background-size: cover;
+
+  /*
+    // PARA RESPONSIVE AL ESPECIFICAR
+    background-size: cover;
+    background-position: center center;
+  */
+}
+
+.form-container-pacientes{
+  background-image: url(img/background-pacientes.png);
+}
+
+.myform{      
+  width: 60%;  
+  color: rgb(0, 0, 0); 
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 2em 2em; 
+}
+
+.form_labels {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.form_inputs {
+  /*box-sizing: border-box;*/
+  display: flex;
+  width: 95%;
+  height: 1.5em;
+  padding: 10px;
+  margin: 0.2em;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 50px;
+  
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(22, 69, 178);
+}
+
+.form_options {
+  display: flex;
+  width: 97%;
+  height: 2.5em;
+  padding: 10px;
+  margin: 5px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 50px;
+  
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(22, 69, 178);
+}
+
+#form_sendButton {  
+  display:block;
+  margin:2em auto 0;
+
+  width: 30%;
+  height: 3em;
+  padding: 12px 20px; 
+  border: none;
+  border-radius: 30px;
+    
+  font-size: 1.1em;
+  text-align: center;
+  color: #FFF;
+  background-color: #0c2f98;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form_sendButton:hover {
+    background-color: #2969ff;
+}
+
+/*CSS DE LOS LISTADOS*/
+.tabla-container{
+  display: flex;  
+}
+
+table{    
+  flex: 1;
+  width: 95%;  
+  border: 1px solid;  
+  margin: 1%;
+}
+
+thead{    
+  background: #102c81;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 25px;  
+}
+
+tbody{  
+  font-size: 22px;
+  text-align: center;    
+}
+

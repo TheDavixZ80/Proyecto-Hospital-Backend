@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de doctores</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+
+<body>
+    <header>
+      <h1> Registro de doctores</h1> 
+      <a href="/index.html"> Volver</a>
+      
+    </header>  
+    
+    <main>
+        <section class="form-container-doctores">
+            <form class="myform">
+                <fieldset>
+                    <legend>Información del doctor</legend>
+                    <label class="form_labels"> Nombre:</label>
+                    <input type="text" class="form_inputs" id="form_nombre">
+                    
+                    <label class="form_labels"> Apellido:</label>
+                    <input type="text" class="form_inputs" id="form_apellido">
+                    
+                    <label class="form_labels"> Cedula:</label>
+                    <input type="number" class="form_inputs" id="form_cedula">
+        
+                    <label class="form_labels"> Correo electronico:</label>
+                    <input type="email" class="form_inputs" id="form_email">
+                    
+                    <label class="form_labels" for="especialidades">Especialización:</label>
+                    <select class="form_options" id="form_especialidades">
+                        <option value="Medicina general">Medicina general</option>
+                        <option value="Cardiologia">Cardiología</option>
+                        <option value="Medicina interna">Medicina interna</option>
+                        <option value="Dermatologia">Dermatología</option>
+                        <option value="Rehabilitacion fisica">Rehabilitación física</option>
+                        <option value="Psicologia">Psicología</option>
+                        <option value="Odontologia">Odontología</option>
+                        <option value="Radiologia">Radiología</option>                
+                    </select>
+                    
+                    <label class="form_labels"> Consulturio:</label>
+                    <input type="text" class="form_inputs" id="form_consultorio">            
+                  
+                    <input type="button" class="form_buttons" id="form_sendButton" value="Enviar datos" onclick="recolectarDatos()" />
+        
+                </fieldset>
+            </form>
+        </section>        
+    </main> 
+</body>
+
+<script src="mainjs.js"></script>
+</html>
+
