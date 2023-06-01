@@ -1,4 +1,9 @@
 function recolectarDatos() {
+    // Aqui se crea un JSON
+    const myJson = JSON.stringify(doctor);
+}
+
+function registrarDoctor() {
     // Todo esto es STRING
     const nombre = document.getElementById('form_nombre').value;
     const apellido = document.getElementById('form_apellido').value;
@@ -7,11 +12,6 @@ function recolectarDatos() {
     const especialidad = document.getElementById('form_especialidades').value; 
     const consultorio = document.getElementById('form_consultorio').value; 
 
-   
-
-    /* De aqui para abajo deberia organizar*/
-    // AQUI SE GENERA EL OBJETO (PUNTO 4)
-    // AHORA DEBERIA PASAR A JSON Y LUEGO A COOKIE
     const doctor = {
         nombreDoctor: nombre,
         apellidoDoctor: apellido,
@@ -20,63 +20,73 @@ function recolectarDatos() {
         especialidadDoctor: especialidad,
         consultorioDelDoctor: consultorio
     }  
-
-    // Aqui me invento un JSON
-    const myJson = JSON.stringify(doctor);
-        
-    console.log("te imprimo mi objeto: " + doctor.firstName + " " +doctor.apellidoDoctor);
-    // Sale Object object
-    console.log("te imprimo mi objeto full: " + doctor); 
-    console.log("te imprimo mi JSON: " + myJson);
-    console.log(typeof(myJson));
-
-    // Aqui esta la COOKIE
-    document.cookie = "";
-
-    guardarEnCookie(doctor);
-    alert("¡Los datos han sido registrados!");
     
-  }
-  
-function setCookie(c_name, c_value, c_daysToLive){
-    const date = new Date();
-    date.setTime(date.getTime() + (c_daysToLive*24*60*60*1000))
-    let expires = "expires=" + date.toUTCString();
-    document.cookie = c_name + "=" + c_value + ";" + expires + ";path=/";
+    guardarEnCookie(doctor, "doctores"); // SE ENVIA OBJETO 
+
+    alert("¡Los datos del doctor han sido registrados!");
+    clearInputs();    
+
 }
 
-function getCookie(c_name) {
-    const name = c_name + "="; // Con esto quitaba el "=" que aparecia en label
-    const c_Decoded = decodeURIComponent(document.cookie);
-    const c_Array = c_Decoded.split("; ");
-    for (var i = 0; i < c_Array.length; i++){
-        var myCookie = c_Array[i];
-        while(myCookie.charAt(0) == ' '){
-            myCookie = myCookie.substring(1);
-        }
-        if(myCookie.indexOf(name) == 0){
-            return myCookie.substring(name.length, myCookie.length);
-        }
+function registrarPaciente() {
+    
+    const nombre = document.getElementById('form_nombre').value;
+    const apellido = document.getElementById('form_apellido').value;
+    const cedula = document.getElementById('form_cedula').value;
+    const edad = document.getElementById('form_edad').value;    
+    const telefono = document.getElementById('form_telefono').value; 
+    const especialidad = document.getElementById('form_especialidades').value; 
+
+    const paciente = {
+        nombrePaciente: nombre,
+        apellidoPaciente: apellido,
+        cedulaPaciente: cedula,
+        edadPaciente: edad, // CAMBIADOS
+        telefonoPaciente: telefono, // CAMBIA
+        especialidadPaciente: especialidad // CAMBIAR NOMBRE??        
     }
-    return "";
+
+    guardarEnCookie(paciente, "pacientes"); // SE ENVIA OBJETO // Y un parametro para validacion
+
+    alert("¡Los datos del paciente han sido registrados!");
+    clearInputs();
 }
 
 //Todo el codigo de profe
-function guardarEnCookie(mascota) {
-    // Obtener los datos de la cookie actual de mascotas
-    let datosMasco = getCookie("mascotas");
-    // Si la cookie está vacía, inicializarla como un arreglo vacío
-    if (datosMasco === "") {
-        datosMasco = "[]";
-    }
-    // Convertir la cookie en un arreglo de objetos
-    const mascotas = JSON.parse(datosMasco);
-    // Agregar la nueva mascota al arreglo
-    mascotas.push(mascota);
-    // Convertir el arreglo de mascotas de nuevo a un JSON
-    const nuevoJSON = JSON.stringify(mascotas);
-    // Guardar el JSON en la cookie
-    setCookie("mascotas", nuevoJSON);
+function guardarEnCookie(persona, tipoPersona) {
+    if(tipoPersona == 'doctores') {
+
+        let datosPersonaARegistrar = getCookie(tipoPersona);
+        // Si la cookie está vacía, inicializarla como un arreglo vacío
+        if (datosPersonaARegistrar === "") {
+            datosPersonaARegistrar = "[]";
+        }
+        // Convertir la cookie en un arreglo de objetos
+        const personas = JSON.parse(datosPersonaARegistrar);
+        // Agregar la nueva mascota al arreglo
+        personas.push(persona);
+        // Convertir el arreglo de mascotas de nuevo a un JSON
+        const nuevoJSON = JSON.stringify(personas);
+        // Guardar el JSON en la cookie
+        setCookie(tipoPersona, nuevoJSON);
+        
+    } else if (tipoPersona == 'pacientes') {
+       
+        // Obtener los datos de la cookie actual de mascotas
+        let datosPersonaARegistrar = getCookie(tipoPersona);
+        // Si la cookie está vacía, inicializarla como un arreglo vacío
+        if (datosPersonaARegistrar === "") {
+            datosPersonaARegistrar = "[]";
+        }
+        // Convertir la cookie en un arreglo de objetos
+        const personas = JSON.parse(datosPersonaARegistrar);
+        // Agregar la nueva mascota al arreglo
+        personas.push(persona);
+        // Convertir el arreglo de mascotas de nuevo a un JSON
+        const nuevoJSON = JSON.stringify(personas);
+        // Guardar el JSON en la cookie
+        setCookie(tipoPersona, nuevoJSON);
+    }   
 }
 
 // Función para obtener los datos de la cookie
@@ -99,3 +109,6 @@ function setCookie(nombre, valor) {
     document.cookie = `${nombre}=${encodeURIComponent(valor)}`;
 }
 
+function clearInputs(){    
+    document.getElementById("myform").reset();
+}

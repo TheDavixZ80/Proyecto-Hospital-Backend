@@ -13,29 +13,30 @@
 <body>
     <header>
       <h1> Registro de doctores</h1> 
-      <a href="/index.html"> Volver</a>
+      <a href="index.html"> Volver</a>
       
     </header>  
     
     <main>
         <section class="form-container-doctores">
-            <form class="myform">
+            <form class="myform" id="myform">
                 <fieldset>
                     <legend>Información del doctor</legend>
                     <label class="form_labels"> Nombre:</label>
-                    <input type="text" class="form_inputs" id="form_nombre">
+                    <input type="text" class="form_inputs" id="form_nombre" placeholder="Ingresa el nombre" required>
                     
                     <label class="form_labels"> Apellido:</label>
-                    <input type="text" class="form_inputs" id="form_apellido">
+                    <input type="text" class="form_inputs" id="form_apellido" placeholder="Ingresa el apellido" required>
                     
-                    <label class="form_labels"> Cedula:</label>
-                    <input type="number" class="form_inputs" id="form_cedula">
+                    <label class="form_labels"> Cédula:</label>
+                    <input type="number" class="form_inputs" id="form_cedula" placeholder="Ingresa la cédula" required>
         
                     <label class="form_labels"> Correo electronico:</label>
-                    <input type="email" class="form_inputs" id="form_email">
+                    <input type="email" class="form_inputs" id="form_email" placeholder="Ingresa un email" required>
                     
                     <label class="form_labels" for="especialidades">Especialización:</label>
-                    <select class="form_options" id="form_especialidades">
+                    <select class="form_options" id="form_especialidades" required>
+                        <option value="" disabled selected>Selecciona una especialización</option>
                         <option value="Medicina general">Medicina general</option>
                         <option value="Cardiologia">Cardiología</option>
                         <option value="Medicina interna">Medicina interna</option>
@@ -47,9 +48,9 @@
                     </select>
                     
                     <label class="form_labels"> Consulturio:</label>
-                    <input type="text" class="form_inputs" id="form_consultorio">            
+                    <input type="text" class="form_inputs" id="form_consultorio" placeholder="Especifica el consultorio" required>            
                   
-                    <input type="button" class="form_buttons" id="form_sendButton" value="Enviar datos" onclick="recolectarDatos()" />
+                    <input type="button" class="form_buttons" id="form_sendButton" value="Enviar datos" onclick="registrarDoctor()" />
         
                 </fieldset>
             </form>
