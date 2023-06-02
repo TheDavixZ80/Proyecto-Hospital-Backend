@@ -29,13 +29,13 @@
                     <input type="text" class="form_inputs" id="form_apellido" placeholder="Ingresa el apellido" required>
                     
                     <label class="form_labels"> Cédula:</label>
-                    <input type="number" class="form_inputs" id="form_cedula" placeholder="Ingresa la cédula" required>
+                    <input type="number" class="form_inputs" id="form_cedula" min="0" placeholder="Ingresa la cédula" required>
         
                     <label class="form_labels"> Edad:</label>
-                    <input type="number" class="form_inputs" id="form_edad" placeholder="Ingresa la edad" required>
+                    <input type="number" class="form_inputs" id="form_edad" min="0" placeholder="Ingresa la edad" required>
 
                     <label class="form_labels"> Telefono:</label>
-                    <input type="number" class="form_inputs" id="form_telefono" placeholder="Ingresa el numero de contacto" required>  
+                    <input type="number" class="form_inputs" id="form_telefono" min="0" placeholder="Ingresa el numero de contacto" required>  
                     
                     <label class="form_labels" for="especialidades">Especialización requerida:</label>
                     <select class="form_options" id="form_especialidades" required>
@@ -50,8 +50,7 @@
                         <option value="Radiologia">Radiología</option>                
                     </select>
                   
-                    <input type="button" class="form_buttons" id="form_sendButton" value="Enviar datos" onclick="registrarPaciente()" />
-        
+                    <input type="submit" class="form_buttons" id="form_sendButton" value="Enviar datos" onclick="registrarPaciente()" />        
                 </fieldset>
             </form>
         </section>        

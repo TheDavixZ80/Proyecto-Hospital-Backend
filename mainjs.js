@@ -1,3 +1,5 @@
+var formulario = document.getElementById(myform);
+
 function registrarDoctor() {
     // Todo esto es STRING
     const nombre = document.getElementById('form_nombre').value;
@@ -16,10 +18,14 @@ function registrarDoctor() {
         consultorioDelDoctor: consultorio
     }  
     
-    guardarEnCookie(doctor, "doctores"); // SE ENVIA OBJETO 
-
-    alert("¡Los datos del doctor han sido registrados!");
-    clearInputs();    
+    if (myform.checkValidity() == true){
+        guardarEnCookie(doctor, "doctores"); // SE ENVIA OBJETO 
+        alert("¡Los datos del doctor han sido registrados!");
+        clearInputs();    
+    } else {
+        alert("Por favor valida los datos y vuelve a intentar.");
+    }
+    
 }
 
 function registrarPaciente() {
@@ -40,10 +46,14 @@ function registrarPaciente() {
         especialidadPaciente: especialidad 
     }
 
-    guardarEnCookie(paciente, "pacientes"); // SE ENVIA OBJETO // Y un parametro para validacion
-
-    alert("¡Los datos del paciente han sido registrados!");
-    clearInputs();
+    if (myform.checkValidity() == true){
+        guardarEnCookie(paciente, "pacientes"); // SE ENVIA OBJETO // Y un parametro para validacion
+        alert("¡Los datos del paciente han sido registrados!");
+        clearInputs();   
+    } else {
+        alert("Por favor valida los datos y vuelve a intentar.");
+    }
+    
 }
 
 //codigo visto en clase
