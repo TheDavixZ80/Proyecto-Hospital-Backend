@@ -1,4 +1,4 @@
-var formulario = document.getElementById(myform);
+var formulario = document.getElementById('myform');
 
 function registrarDoctor() {
     // Todo esto es STRING
@@ -18,7 +18,7 @@ function registrarDoctor() {
         consultorioDelDoctor: consultorio
     }  
     
-    if (myform.checkValidity() == true){
+    if (formulario.checkValidity() == true){
         guardarEnCookie(doctor, "doctores"); // SE ENVIA OBJETO 
         alert("¡Los datos del doctor han sido registrados!");
         clearInputs();    
@@ -46,14 +46,13 @@ function registrarPaciente() {
         especialidadPaciente: especialidad 
     }
 
-    if (myform.checkValidity() == true){
+    if (formulario.checkValidity() == true){
         guardarEnCookie(paciente, "pacientes"); // SE ENVIA OBJETO // Y un parametro para validacion
         alert("¡Los datos del paciente han sido registrados!");
         clearInputs();   
     } else {
         alert("Por favor valida los datos y vuelve a intentar.");
-    }
-    
+    }    
 }
 
 //codigo visto en clase
