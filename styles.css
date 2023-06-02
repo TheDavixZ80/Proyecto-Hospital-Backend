@@ -27,8 +27,7 @@ body {
 
 header {
   display: block;
-  background-color: blue;
-  background-color: red; /* For browsers that do not support gradients */
+  background-color: blue;  
   background-image: linear-gradient(rgb(5, 40, 157), #2665a9);
   color: #FFF;
   width: 100%;
@@ -52,7 +51,6 @@ h1 {
   justify-content: center;
   background-image: url(img/backgroundtest.png);  
   background-size: cover;
-
   /*
     // PARA RESPONSIVE AL ESPECIFICAR
     background-size: cover;

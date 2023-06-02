@@ -1,8 +1,3 @@
-function recolectarDatos() {
-    // Aqui se crea un JSON
-    const myJson = JSON.stringify(doctor);
-}
-
 function registrarDoctor() {
     // Todo esto es STRING
     const nombre = document.getElementById('form_nombre').value;
@@ -25,7 +20,6 @@ function registrarDoctor() {
 
     alert("¡Los datos del doctor han sido registrados!");
     clearInputs();    
-
 }
 
 function registrarPaciente() {
@@ -41,9 +35,9 @@ function registrarPaciente() {
         nombrePaciente: nombre,
         apellidoPaciente: apellido,
         cedulaPaciente: cedula,
-        edadPaciente: edad, // CAMBIADOS
-        telefonoPaciente: telefono, // CAMBIA
-        especialidadPaciente: especialidad // CAMBIAR NOMBRE??        
+        edadPaciente: edad, 
+        telefonoPaciente: telefono, 
+        especialidadPaciente: especialidad 
     }
 
     guardarEnCookie(paciente, "pacientes"); // SE ENVIA OBJETO // Y un parametro para validacion
@@ -52,7 +46,7 @@ function registrarPaciente() {
     clearInputs();
 }
 
-//Todo el codigo de profe
+//codigo visto en clase
 function guardarEnCookie(persona, tipoPersona) {
     if(tipoPersona == 'doctores') {
 

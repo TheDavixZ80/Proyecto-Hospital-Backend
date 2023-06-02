@@ -12,8 +12,8 @@ for (let i = 0; i < pacientesCookie.length; i++) {
     const celdaNombrePaciente = fila.insertCell();
     const celdaApellidoPaciente = fila.insertCell();
     const celdaCedulaPaciente = fila.insertCell();
-    const celdaEdadPaciente = fila.insertCell();    // CAMBIA EDAD
-    const celdaTelefono = fila.insertCell(); // CAMBIA TELEFONO
+    const celdaEdadPaciente = fila.insertCell();    
+    const celdaTelefono = fila.insertCell(); 
     const celdaEspecialidad = fila.insertCell();    
     //agregar la informaciona cada una de las celdas de la tabla
     celdaNombrePaciente.textContent = paciente.nombrePaciente;
